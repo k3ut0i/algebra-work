@@ -1,0 +1,7 @@
+* Workspace for Abstract Algebra work
+
+** Some example Groups
+- V₄ : Klein 4-group
+
+*** TODO Prime cyclic groups - Zₚ
+More familiarity with finite sets is needed for this to work
