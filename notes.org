@@ -1,0 +1,33 @@
+* Implementation Notes
+
+** Groups
+For a group to be completely (i.e., A proof of ~Group _ _~ in Agda), I need to provide the following:
+- the set on which the group is defined,
+- the function for group operation,
+- the function for inverse operation,
+- identity element,
+- proofs of identity, i.e., left and right inverses w.r.t identity element,
+- proof of associativity.
+
+*** Generative Helpers
+I am not familiar enough with Agda to write a full general Cyclic group implementation. With a few generated cyclic groups as test cases, I hope to test how my generic implementations are working. For, e.g., Can I have a Isomorphism for (Zn 4) to generated Z4?
+
+A Simple usage
+#+begin_src lisp :exports both :results output raw :wrap src agda2
+  (asdf:load-system :algebra-gen)
+  (generate:write-Zn-agda 2)
+#+end_src
+
+#+RESULTS:
+#+begin_src agda2
+module GroupG2 where
+
+data G2 : Set where
+  a0 a1 : G2
+
+fn2 : G2 -> G2 -> G2
+fn2 a1 a1 = a0
+fn2 a1 a0 = a1
+fn2 a0 a1 = a1
+fn2 a0 a0 = a0
+#+end_src
